@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>深拷贝与浅拷贝</h1>
+    <script>
+        //浅拷贝
+        let arr=[1,2,3,4];
+        let newarr=arr;  //赋值
+        newarr.push(6);
+        console.log(arr,newarr);
+
+
+        let a=1;
+        let b=a;
+        b=2;
+        console.log(a,b);
+    
+
+        //浅拷贝
+        let arr2=[1,2,3,4];
+        let newarr2=[...arr2];
+        newarr2.push(5);
+        console.log(arr2,newarr2);
+
+
+        let objA={
+            names:'khh',
+            age:18
+        }
+        let {names,age}=objA;
+            names="xiaoming";
+        console.log(names,objA);
+
+     //解构是浅拷贝，
+     //一维数组或对象=>深拷贝
+     //多维数组或对象不可行=>浅拷贝
+       let objB={
+            names2:'zhaoliying',
+            age2:18,
+            attr:{sex:'女',weight:'50'}
+        }
+        let {names2,age2,attr}=objB;
+            names2="liuyifei";
+            age2=16;
+            attr.weight="45";
+        console.log(names2,age2,objB);
+
+
+        let objC={
+            name3:'liiuxiang',
+            age3:35,
+            attr3:{sex:'men',weight:80}
+        }
+        //JSON.stringify() 对象转json对象
+        //JSON.parse() JSON字符串转json对象
+        //深拷贝
+        let newObjC=JSON.parse(JSON.stringify(objC));
+        //百分之八十深拷贝都是这么写的
+        //20%不行
+        //1.JSON=>json类型（function）
+        //2.会报错，bug
+        //3.复杂的对象不得劲
+        newObjC.age3=89;
+        newObjC.attr3.weight=90;
+        console.log(objC,newObjC);
+
+        //特殊方法：深度克隆
+       function deepClone(obj){
+        //判断数组还是对象
+        const targetObj=obj.constructor === Array?[]:{};
+        for(let keys in obj){
+              if(obj.hasOwnProperty(keys)){
+                if(obj[keys]&&typeof obj[keys] ==="object"){
+                    targetObj[keys]=obj[keys].constructor === Array?[]:{};
+                    //递归
+                    targetObj[keys]=deepClone(obj[keys]);
+
+                }else{
+                    //基本数据类型 直接赋值
+                    targetObj[keys]=obj[keys];
+
+
+                }
+              }
+        }return targetObj
+       }
+
+       //测试前面的深拷贝方法
+       let objD={
+        nameD:'zhangsan',
+        ageD:47,
+        addressD:'hunan',
+        likesD:[intelligence='chess',sports='bastetball'],
+        arrD:[]
+        }
+       let newObjD=deepClone(objD);
+       newObjD.nameD='lisi';
+       newObjD.likesD.intelligence='gobang';
+       console.log(objD,newObjD)
+
+
+
+
+
+      
+
+    </script>
+</body>
+</html>
