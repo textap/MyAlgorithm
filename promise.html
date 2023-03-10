@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //问：是否可以用return代替resolve
+    //不可以；原因：无法实现链式调用，且不符合规范
+    
+     //问：为什么出现promise?
+     //回调地狱=>业务逻辑复杂=>回调增多=>可维护性，观赏性降低
+     function fn1(){
+        console.log(1);
+     }
+     function fn2(){
+        console.log(2);
+     }
+     function fn3(){
+        console.log(3);
+     }
+     fn1();
+     setTimeout(()=>{
+        fn2();
+        setTimeout(()=>{
+            fn3();
+        },1000)
+     },3000)
+    
+     //promise=>承诺
+     //1、许一个承诺
+    let isForget=true;
+    let getbook =new Promise((resolve,reject)=>{
+        if(isForget){
+            let book={
+            name:"'Sun Tzu's Art of War",
+            price:'$99'
+        }
+        //得到书
+        resolve(book)
+        console.log(book.name);
+        }else{
+            let err=new Error("I forgot.");
+            reject(err)
+
+        }
+
+    })
+    let testFn=function(){
+        getbook.then((fulfilled)=>{
+            console.log(fulfilled)
+        }).catch((rejected)=>{
+            console.log(rejected.message);
+        })
+    }
+    testFn();
+</script>
+</html>
