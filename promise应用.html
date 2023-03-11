@@ -32,15 +32,16 @@
         },1000)
      },3000)
     
-     //promise=>承诺
+     //promise=>承诺   【应用】
      //1、许一个承诺
     let isForget=true;
     let getbook =new Promise((resolve,reject)=>{
         if(isForget){
             let book={
             name:"'Sun Tzu's Art of War",
+            color:'black',
             price:'$99'
-        }
+           }
         //得到书
         resolve(book)
         console.log(book.name);
@@ -51,13 +52,41 @@
         }
 
     })
-    let testFn=function(){
-        getbook.then((fulfilled)=>{
+    // let testFn=function(){
+    //     getbook.then((fulfilled)=>{
+    //         console.log(fulfilled)
+    //     }).catch((rejected)=>{
+    //         console.log(rejected.message);
+    //     })
+    // }
+    // testFn();
+
+    let buypen=(book)=>{
+        let pen ={
+            brand:'晨光',
+            color:'red'
+        }
+        let msg={
+            message:pen.brand+pen.color+book.color,
+            pen:pen,
+            book:book
+        }
+        return Promise.resolve(msg);
+
+    }
+    let test02=()=>{
+     getbook
+        .then(buypen)
+        .then((fulfilled)=>{
             console.log(fulfilled)
         }).catch((rejected)=>{
-            console.log(rejected.message);
+            console.log(rejected.message)
         })
     }
-    testFn();
+    test02();
+
+
+    //Promise 【源码】
+    
 </script>
 </html>

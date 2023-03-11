@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>手写promise</h1>
+    <script>
+        //1.基本结构
+    function myPromise(){
+        let self=this;
+        self.status="padding";//状态
+        self.value=null;//成功之后返回数据
+        self.reason=null;//失败原因
+
+        //返回成功的结果
+        function resolve(){
+
+        }
+
+        //返回失败的原因
+        function reject(){
+
+        }
+    }
+
+    //2. then()
+    myPromise.prototype.then=function(){
+
+    }
+
+    //
+    let demo =new myPromise((resolve,reject)=>{
+console.log("111");
+    })
+    </script>
+</body>
+</html>
