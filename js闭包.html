@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>js闭包</h2>
+    <script>
+        //1.闭包是什么？---方法里返回一个方法
+        // function proa(){
+        //     let a1=1;
+        //     return function(){
+        //         return a1
+        //     }
+        // }
+        //2.闭包存在的意义
+        //2.1 延长变量的生命周期
+        //2.2创建私有环境
+        console.log("分隔符号");
+        let a ='小布点'
+        function fn1(){
+            let b=1
+            console.log(a)
+        }
+        //console.log(b)
+        fn1()
+
+
+        // 3.作用域链
+        let name="小明";
+        function fn2(){
+            let name="小白"
+            function fn3(){
+                let name ="小兰"
+                console.log(name);
+            }    
+            fn3()         
+        }
+        fn2()
+
+        //4.桥梁----沟通内外部方法
+        function outer(){
+            let a1=111;
+            let a2=222;
+            return function inner(){
+                return a1;
+            }
+            
+        }
+        function fn5(){
+            let getInnerData=outer();
+            console.log(getInnerData);
+        }
+        fn5();
+
+        //5.闭包会常驻内存
+
+
+        //6.vue data()为什么是一个函数？====他是一个闭包,每个组件都会有一个私有作用域
+        // data(){
+        //     return{
+
+        //     }
+        // }
+        //如果用一个objct设计，不用闭包，会导致各个组件相互干扰
+        //obj={}
+
+        let makeConter=function(){
+            let num=0;
+            function changeBy(val){
+                num+=val
+            }
+        //给你什么，你才能拿
+        return{
+            add:function(){
+                changeBy(1)
+            },
+            reduce:function(){
+                changeBy(-1)
+            },
+            value:function(){
+                return num
+            }
+        }
+    }
+    let counter1=makeConter()
+    let counter2=makeConter()
+    counter1.add()
+    counter2.add()
+    counter2.add()
+    counter2.add()
+    counter2.reduce()
+    console.log(counter1.value())
+    console.log(counter2.value())
+    //有独立的词法作用域
+    //面向对象编程-----数据的隐藏和封装
+
+    </script>
+</body>
+</html>

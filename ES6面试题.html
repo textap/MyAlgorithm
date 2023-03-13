@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>ES6</h2>
+    <script>
+        //var let const
+        //var的问题 --为什么es6不能使用的原因：
+        //a.声明提升 
+        // console.log(num)
+        // var num=123
+
+        //b.变量覆盖 =>套牌车
+        var num1=12
+        var num1=34
+        console.log(num1)//34
+
+        //c.没有块级作用域 =>红杏出墙
+        function fn2(){
+            for(var i=0;i<3;i++){
+                console.log(i)
+            }
+            console.log(i)//按理来说这里不ok
+        }
+        fn2()
+
+        //测试const
+        //1、const声明之后必须赋值，否则报错
+        //2、定义的值不能被修改，否则报错
+        //支持let的其他属性
+        // const lt=123
+        // lt=456
+        // console.log(lt)
+
+        // let le=123
+        // le=456
+        // console.log(le)//输出456
+
+        //a与b互换---【解构】
+        // let a=1;
+        // let b=2;
+        // [a,b]=[b,a]
+        // console.log(a,b)
+
+        //es6去重
+        // let arr=[12,45,98,45,21,12,98]
+        // let item=[...new Set(arr)]
+        // console.log(item)
+
+        //不能只知道promise用来调接口的
+        //promise的原理考察====1243
+        const promise =new Promise((resolve,reject)=>{ //构造方法同步执行
+            console.log(1)
+            resolve();
+            console.log(2)
+        })
+        promise.then(()=>{ //.then方法异步执行
+            console.log(3)
+        })
+        console.log(4)
+
+
+
+
+    </script>
+</body>
+</html>
