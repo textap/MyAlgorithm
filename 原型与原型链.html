@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>原型与原型链</h2>
+    <script>
+        // 原型prototype=> 函数特有
+        //原型链 _proto_ =>[[prototype]]
+        let obj={}
+        console.log(obj)
+        //obj.prototype.a=666
+        let fn=function fn(){
+
+        }
+        console.dir(fn)
+        // function fn(){
+        // }
+        // fn.prototype.name="小红"
+        // fn.prototype.fn2=function(){
+        //     console.log("111")
+        // }
+
+        function PerSon(){
+
+        }
+        PerSon.prototype.name='汉合'
+        PerSon.prototype.age=19
+        PerSon.prototype.getAge=function(){
+            console.log(this.age)
+        }
+        //实例
+        let PerSon1=new PerSon()
+        PerSon1.age=54
+        console.log(PerSon1)
+        PerSon1.getAge()
+
+        //从当前实例属性去查，如果找到了就返回，否则顺着原型链一层一层往里找
+
+
+    </script>
+</body>
+</html>

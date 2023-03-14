@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+    <h2>E6------filter</h2>
+    <script>
+        // 过滤 
+        let a=[1,2,3,4,15]
+        //1、current【当前的值】
+        //2、index【当前值的下标】
+        //3、array【原有的这个数组对象】
+        let b=a.filter((current,index,array)=>{
+            return current<10
+        })
+        console.log(a)
+        console.log(b)
+    </script>
+    
+</body>
+</html>

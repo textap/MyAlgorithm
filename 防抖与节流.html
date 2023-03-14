@@ -5,16 +5,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .box{
+            background-color: green;
+            width: 200px;
+            height: 200px;
+        }
+
+    </style>
 </head>
 <body>
+    <!-- 防抖 -->
     <h2>防抖与节流</h2>
     <input placeholder="请输入电话"/>
+
+
+    <!-- 2节流 -->
+    <div class="box">
+
+    </div>
     <script>
-        //防抖-->将多次操作变成一次
+        //防抖-->将多次操作变成一次 在固定的时间内时间只允许发生一次
         let telInput=document.querySelector('input ')
-        telInput.addEventListener('input',(e)=>{
+        telInput.addEventListener('input',(antiShake(demo,2000))
+           // console.log('发起请求')
+        )
+
+        //防抖方法封装
+        function antiShake(fn,wait){
+            let timeOut=null;
+            return args=>{
+                if(timeOut) clearTimeout(timeOut)
+                timeOut=setTimeout(fn,wait);
+            }
+        }
+        function demo(){
             console.log('发起请求')
-        })
+        }
+
+
+        //节流-----一定时间内只调用一次函数，一定时间内的多个时间合为一个
+        //方法二：通过时间戳
+        //应用场景 【提交表单】【高频的监听事件】
+        let box=document.querySelector(".box")
+        box.addEventListener("touchmove",(touchmove(demo,2000))
+          //  console.log("发起请求")
+        )
+        function throttle(){
+            let timer=null
+            return function(){
+                if(!timer){
+                    timer=setTimeout(()=>{
+                        event();
+                        timer=null;
+                    },time);
+                }
+            }
+        }
+      function  demo(){
+            console.log("发起请求")
+        }
+        
 
     </script>
 </body>

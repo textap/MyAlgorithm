@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>foreach()与map()</h2>
+    <script>
+        // foreach没有返回值，
+        // 不能用Break打断，
+        // 遍历的是value
+        let arr=['a','b','c']
+        let res=arr.forEach(element=>{
+            console.log(element)
+            //break;
+            return element+'1'//undefined
+        })
+        console.log(res)
+
+        // map()有返回值,默认return是undefined，
+        // 不能用Break打断，
+        // 接收参数是一个函数（key,value）
+        let arr1=['a','b','c']
+        let res1=arr1.map((value,key)=>{
+            console.log(value)
+            console.log(key)
+            //break;
+            return value+'1'//undefined
+        })
+        console.log(res1)
+
+    </script>
+    
+</body>
+</html>
