@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>如何让数据变得可观测</title>
+</head>
+<body>
+    <h2>如何让数据变得可观测</h2>
+    <script>
+        //data(){}
+        let obj={
+            name:'小小',
+            age:18
+        }
+        obj.name="张红"
+        obj.age=23
+        console.log(obj)
+
+        let obj1={
+            name:'小李子'
+        }
+        let val=20
+        Object.defineProperty(obj1,"age1",{
+            get(){
+                console.log(`age1属性被读取${val}`)
+                return val;
+            },
+            set(newVal){
+                console.log( `age1属性值被修改了，新值${newVal}`)
+                val=newVal
+            }
+        })
+
+    </script>
+    
+</body>
+</html>
