@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>伪元素</title>
+	<style type="text/css" media="screen">
+		*{
+			padding: 0px;
+			margin: 0px;
+		}
+		.demo{
+			border: 1px solid #ccc;
+			width: 300px;
+			margin: 50px auto;
+			padding: 10px;
+		}
+		/* 文章第一个字符加粗放大下沉 */
+		.demo::first-letter{
+			font-size: 40px;
+			font-weight: bold;
+			float: left;
+		}
+		/* 选择首行 */
+		.demo::first-line{
+			color: #f00;
+		}
+	    .demo2{
+	    	width: 800px;
+	    	border: 1px solid #ccc;
+	    	margin: 10px auto;
+	    	padding: 10px;
+	    	text-align: center;
+	    }
+		.demo2::before{
+             content: url('./bz1.jpg');
+             display: block;
+		}
+		.demo2::after{
+			content: "";
+			/* display: block; */
+		}
+        .demo3{
+        
+        	 border-radius: 25px;
+        	width: 300px;
+        	height: 200px;
+        	margin: 10px auto;
+        	border: 1px solid #f0f;
+        }
+        .demo3 h1{
+           text-align: center;
+            text-shadow: 5px 5px 5px #FF0000;
+        }
+        .demo3 h1::before{
+        	content:"《";
+        }
+         .demo3 h1::after{
+        	content:"》";
+        }
+        .demo4{
+        	width: 200px;
+        	height: 200px;
+        	margin:100px auto;
+        	background-color: red; 
+        	border-radius: 100px 10px;
+        }
+        .demo5{
+        	border-top: 50px solid  transparent;
+        	border-left: 50px solid #f00;
+        	border-bottom: 50px solid  transparent;
+        	border-right: 0px solid #00f;
+        	width: 0px;
+        	height: 0px;
+        	margin:50px auto;
+        	 
+        	
+
+        }
+
+	</style>
+</head>
+<body>
+	<div class="demo">
+		伪元素：伪元素一般指伪对象语言。 伪对象语言创造的元素不存在在DOM文档中，是虚拟的元素，是创建新元素。代表某个元素的子元素，这个子元素虽然在逻辑上存在，但却并不实际存在于文档树中。
+	</div>
+	<div class="demo2"> 
+	伪元素
+	</div>
+	<div class="demo3">
+		<h1>好好学java</h1>
+		<h1>好好学java</h1>
+		<h1>好好学java</h1>
+	</div>
+	<h1>画圆形</h1>
+	<div class="demo4">
+		
+	</div>
+	<h1>画三角形</h1>
+	<div class="demo5">
+		
+	</div>
+</body>
+</html>

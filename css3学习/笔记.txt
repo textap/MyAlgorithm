@@ -1,0 +1,61 @@
+1.强大的css选择器
+2.抛弃图片的视觉效果
+3.盒模型变化（多列布局和弹性盒模型）
+4.阴影效果
+5.Web字体和web Font图标
+6.CSS3过渡与动画交互效果
+7.媒体查询
+
+
+ctrl+B运行js代码
+======================================
+1.伪类选择器
+2.结构伪类选择器：
+  ：first-chlid 选择某个元素的第一个子元素；
+  ：last-chlid选择某个元素的最后一个子元素；
+
+
+
+======================================
+::first-letter 文章第一个字符 
+::first-line  文章首行
+::before{
+	content:"";//content必须要有可以为空
+}
+::after{
+	content:"";//content必须要有可以为空
+}
+
+======================================
+Border-radius 伪元素实现图形 
+1.提高网站性能
+2.减少网站的维护工作量
+3.增加了视觉美观性
+
+=====================================
+画三角形：向上的三角形-下边框为0 左右颜色设置为透明色。
+        border-top: 50px solid  #f00;
+        border-left: 50px solid transparent;
+        border-bottom: 50px solid  transparent;
+        border-right: 0px solid #00f;
+=====================================
+
+WSL2 :windows subSysteme for Linux 2
+安装步骤：
+1.打开powerShell,默认是WSL1
+
+=====================================
+线性渐变
+1.语法：
+<angle>：用角度值指定渐变方向
+to left：设置渐变为从右到左
+to right：设置渐变为从左到右
+to top ：设置渐变为从下到上
+to bottom：设置渐变为从上到下
+<color-stop>：用于指定渐变的起止色
+<color>：指定颜色
+<lengh>：用长度指定起止色位置
+<percentage>:用百分比指定起止色位置
+2.使用渐变尽量用到background-image下.
+例：background-image: linear-gradient(to top,red,green);
+}

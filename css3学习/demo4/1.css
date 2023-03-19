@@ -1,0 +1,27 @@
+.demo1{
+ width: 500px;
+ height: 300px;
+ border: 1px solid black;
+ margin: auto;
+ background-image: linear-gradient(to top,red 50%,green 100%);
+ background-image:-webkit-linear-gradient(to top,red 50%,green 100%);
+ background-image: -o-linear-gradient(to top,red 50%,green 100%);
+}
+.demo2{
+ width: 500px;
+ height: 300px;
+ border: 1px solid black;
+ margin: auto;
+ background-image: linear-gradient(20px circle at center,red,black );
+ 
+}
+	
+/* <angle>：用角度值指定渐变方向
+to left：设置渐变为从右到左
+to right：设置渐变为从左到右
+to top ：设置渐变为从下到上
+to bottom：设置渐变为从上到下
+<color-stop>：用于指定渐变的起止色
+<color>：指定颜色
+<lengh>：用长度指定起止色位置
+<percentage>:用百分比指定起止色位置 */

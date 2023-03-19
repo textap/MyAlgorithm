@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>结构伪类选择器</title>
+	<style type="text/css">
+		*{
+			padding: 0px;
+			margin: 0px;
+		}
+		.clearfix{
+			clear: both;
+			overflow: auto; /* 里边内容撑开外面的容器 */
+		}
+		.demo2{
+			border: 1px solid #ccc;
+			width: 300px;
+			margin: 50px auto;
+			padding: 10px;
+		}
+		.demo2 li{
+			float: left;
+			list-style: none;
+			padding: 2px;
+			border: 1px solid #ccc;
+			margin-right:4px ;
+			width: 20px;
+		}
+		
+	</style>
+</head>
+<body>
+    <!-- ul>li*10>a{1}^div*2 -->
+    <div class="demo2 clearfix">
+    	<ul class="clearfix">
+    		<li><a href="">1</a></li>
+    		<li><a href="">2</a></li>
+    		<li><a href="">3</a></li>
+    		<li><a href="">4</a></li>
+    		<li><a href="">5</a></li>
+    		<li><a href="">6</a></li>
+    		<li><a href="">7</a></li>
+    		<li><a href="">8</a></li>
+    		<li><a href="">9</a></li>
+    		<li><a href="">10</a></li>
+    	</ul>
+    </div>
+</body>
+</html>

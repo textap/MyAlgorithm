@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>hello world</title>
+</head>
+<body>
+	<div>
+	<img src="./bz1.jpg">
+    </div>
+	<style type="text/css">
+		div{
+			margin-top: 100px;
+			text-align: center;
+		}
+		img{
+			height: 200px;
+			width: 200px;
+			border-radius: 50%; /*变成圆形*/
+			transition: all 0.5s; /*动作延迟0.5s*/
+			-webkit-transition: all 0.5s; /*动作延迟0.5s*/
+			-o-transition: all 0.5s; /*动作延迟0.5s*/
+			cursor: pointer; /*鼠标变成手形*/
+         
+			
+		}
+		/* 伪类选择器 */
+		img:hover{ 
+			/*鼠标进入图片上方时放大图片 scale(x，y）表示在x轴和要轴缩放的倍数*/
+			transform: scale(1.1);
+			-moz-transform: scale(1.1);
+			-webkit-transform: scale(1.1);
+			-o-transform: scale(1.1);
+
+			
+		}
+
+	</style>
+</body>
+</html>
