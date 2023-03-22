@@ -12,17 +12,37 @@
         {{message}}
     <input placeholder="请输入姓名" v-model="tel"/>
     <p>{{tel}}</p>
+
+    <!-- v-if与v-show区别 -->
+    <!-- v-if:不满足条件，不会渲染dom -->
+    <button v-if="val==1">按钮一</button>
+    <button v-if="val==2">按钮二</button>
+
+    <!-- v-show 只是影藏了dom仍然渲染dom,多次切换时使用 -->
+    <!-- 不允许用于权限操作 -->
+    <button v-show="type">type为true显示</button>
+    <button @click="changeType()">改变type</button>
 </div>
   
     <script>
         new Vue({
             el: "#app",
+            // ???data()为什么是一个函数
+            // 闭包 ---》每个组件都有自己独立的作用域，确保各组件不会相互干扰
+            // 纯对象的话就会有干扰
             data(){
                 return{
                     message:'vue',
-                    tel:''
+                    tel:'',
+                    val:2,
+                    type:false
                 }
                
+            },
+            methods: {
+                 changeType(){
+                    this.type=!this.type
+                 }
             }
         })
     </script>
