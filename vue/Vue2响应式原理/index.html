@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        订阅视图-1：<span class="box-1"></span>
+        订阅视图-2：<span class="box-2"></span>
+    </div>
+
+    <script src="index.js">
+    </script>
+    <script>
+        let obj={}
+        dataHi({
+            data:obj,
+            tag:'view-1',
+            datakey:'one',
+            selector:'box-1'
+        })
+        dataHi({
+            data:obj,
+            tag:'view-2',
+            datakey:'two',
+            selector:'box-2'
+        })
+
+        //1.初始化赋值
+        obj.one='视图一'
+        obj.two='视图二'
+
+        //2.劫持数据，更新者负责重新渲染N次
+
+        // 什么是响应式
+        // 1.数据联动
+        // 2.需要捕获到修改
+    </script>
+</body>
+</html>
