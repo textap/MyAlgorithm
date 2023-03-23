@@ -1,4 +1,4 @@
-let jquery=(function(window){
+let $= jquery=(function(window){
     // 进行dom集合存储，生成jQuery对象
     function Query(dom,selector){
         let i,len =dom ?dom.length:0
@@ -59,5 +59,10 @@ let jquery=(function(window){
     //全局方法
     function isFunction(value){return typeof value=="function"}
     $.isFunction=isFunction
+
+    function$(nodeSelector){
+        let doms=qsa(document,nodeSelector)
+        return new Z(doms,nodeSelector)
+    }
     return $;
 })(window)
