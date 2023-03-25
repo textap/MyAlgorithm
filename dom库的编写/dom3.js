@@ -60,7 +60,7 @@ let $= jquery=(function(window){
     function isFunction(value){return typeof value=="function"}
     $.isFunction=isFunction
 
-    function$(nodeSelector){
+    function $(nodeSelector){
         let doms=qsa(document,nodeSelector)
         return new Z(doms,nodeSelector)
     }
