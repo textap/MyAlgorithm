@@ -11,7 +11,6 @@ let $= jquery=(function(window){
     function Z(elements,selector){
         return Query.call(this,elements,selector)
     }
-
     // dom查找
     function qsa(elements,selector){
         return element.querySelectorAll(selector)
