@@ -1,0 +1,19 @@
+
+async与defer
+##### 使用方法
+
+<script src="./js/test.js" async></script>
+
+<script src="./js/test.js" defer></script>
+
+##### 区别点
+
+同：都能让脚本不阻塞页面
+
+异：async是让一个脚本完全独立的:
+
+- 浏览器不会因async脚本而阻塞
+- async脚本不能保证顺序，他是独立下载独立运行的，不会等待其他脚本
+- async不能保证在DOMContentLoaded之前或之后执行
+- defer通常用于需要在文档解析后操作DOM的JavaScript代码，并且对多个script文件有顺序要求
+- async通常用于独立的脚本，对其他脚本，甚至DOm没有依赖的；

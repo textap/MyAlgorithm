@@ -1,5 +1,4 @@
 var name ="window"
-
 //{}-----对象
 //{}-----代码块
 var person1={

@@ -58,4 +58,3 @@ to bottom：设置渐变为从上到下
 <percentage>:用百分比指定起止色位置
 2.使用渐变尽量用到background-image下.
 例：background-image: linear-gradient(to top,red,green);
-}
