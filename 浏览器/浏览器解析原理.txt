@@ -1,12 +1,12 @@
 
 async与defer
-##### 使用方法
+### 使用方法
 
 <script src="./js/test.js" async></script>
 
 <script src="./js/test.js" defer></script>
 
-##### 区别点
+### 区别点
 
 同：都能让脚本不阻塞页面
 

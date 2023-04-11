@@ -25,6 +25,7 @@ function Person(name){
 var person1=new Person('person1')
 var person2=new Person('person2')
 
+
 // 题目
 person1.foo1()// 隐式绑定 person1
 person1.foo1.call(person2)//显式绑定 person2
@@ -38,4 +39,4 @@ person1.foo3().call(person2)//显示绑定person2
 
 person1.foo4()()//上层作用域找person1
 person1.foo4.call(person2)()//上层作用域找person2 显示绑定
-person1.foo4().call(person2)//上层作用域找person1
+person1.foo4().call(person2)//上层作用域找person1 
